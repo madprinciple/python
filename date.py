@@ -6,9 +6,9 @@ for line in fo:
  ssh = paramiko.SSHClient()
  ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
  ssh.connect(hostname=ip, username='root')
- stdin, stdout, stderr = ssh.exec_command('date')
- for line in stdout.read().splitlines():
-    print(ip +" : " +line)
+ stdin, stdout, stderr = ssh.exec_command('shutdown -h now')
+ #for line in stdout.read().splitlines():
+ #   print(ip +" : " +line)
 
  ssh.close()
 
